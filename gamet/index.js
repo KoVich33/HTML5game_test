@@ -538,7 +538,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 			'printErr': this.onPrintError,
 			'thisProgram': this.executable,
 			'noExitRuntime': false,
-			'dynamicLibraries': [`${loadPath}.side.wasm`].concat(this.gdextensionLibs),
+			'dynamicLibraries': [`${loadPath}.side.wasm.gz`].concat(this.gdextensionLibs),
 			'instantiateWasm': function (imports, onSuccess) {
 				function done(result) {
 					onSuccess(result['instance'], result['module']);
@@ -566,8 +566,8 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 					return path;
 				} else if (path.endsWith('.side.wasm')) {
 					return `${loadPath}.side.wasm`;
-				} else if (path.endsWith('.wasm')) {
-					return `${loadPath}.wasm`;
+				} else if (path.endsWith('.wasm.gz')) {
+					return `${loadPath}.wasm.gz`;
 				}
 				return path;
 			},
@@ -669,7 +669,7 @@ const Engine = (function () {
 	Engine.load = function (basePath, size) {
 		if (loadPromise == null) {
 			loadPath = basePath;
-			loadPromise = preloader.loadPromise(`${loadPath}.wasm`, size, true);
+			loadPromise = preloader.loadPromise(`${loadPath}.wasm.gz`, size, true);
 			requestAnimationFrame(preloader.animateProgress);
 		}
 		return loadPromise;
