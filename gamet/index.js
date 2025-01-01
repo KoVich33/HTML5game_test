@@ -564,8 +564,8 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 					return `${loadPath}.js`;
 				} else if (path in gdext) {
 					return path;
-				} else if (path.endsWith('.side.wasm')) {
-					return `${loadPath}.side.wasm`;
+				} else if (path.endsWith('.side.wasm.gz')) {
+					return `${loadPath}.side.wasm.gz`;
 				} else if (path.endsWith('.wasm.gz')) {
 					return `${loadPath}.wasm.gz`;
 				}
@@ -709,7 +709,7 @@ const Engine = (function () {
 						initPromise = Promise.reject(new Error('A base path must be provided when calling `init` and the engine is not loaded.'));
 						return initPromise;
 					}
-					Engine.load(basePath, this.config.fileSizes[`${basePath}.wasm`]);
+					Engine.load(basePath, this.config.fileSizes[`${basePath}.wasm.gz`]);
 				}
 				const me = this;
 				function doInit(promise) {
@@ -718,7 +718,7 @@ const Engine = (function () {
 					// Make sure to test that when refactoring.
 					return new Promise(function (resolve, reject) {
 						promise.then(function (response) {
-							const cloned = new Response(response.clone().body, { 'headers': [['content-type', 'application/wasm']] });
+							const cloned = new Response(response.clone().body, { 'headers': [['content-type', 'application/wasm.gz']] });
 							Godot(me.config.getModuleConfig(loadPath, cloned)).then(function (module) {
 								const paths = me.config.persistentPaths;
 								module['initFS'](paths).then(function (err) {
