@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #d9b329;
+}
+
+.container {
+    text-align: center;
+}
+
+#image {
+    cursor: pointer;
+    width: 512px;
+    height: 512px;
+}
+
+#counter {
+    font-size: 72px;
+    margin-bottom: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #241d01;
+}
