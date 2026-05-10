@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СЁМОЧКА НА SISKI.NET</title>
+    <title>СЁМОЧКА НА POD.PIVAS.FUN</title>
     <style>
         * {
             margin: 0;
@@ -361,37 +361,31 @@
             </div>
         </div>
         
-        <!-- БЛОК ПРЕДУПРЕЖДЕНИЙ -->
         <div class="warning-box">
             <span class="flash-static">♥ РЕЙТИНГ: 690/1000 ♥</span>
         </div>
         
-        <!-- ФАЛЬШИВЫЕ КНОПКИ (БЕЗ РЕАЛЬНОГО ДЕЙСТВИЯ, ПРОСТО ДЛЯ ДИЗАЙНА) -->
         <div class="button-panel">
             <button class="awful-button" id="fakeActionBtn">😈 НАПИСАТЬ 😈</button>
             <button class="awful-button" id="fakeReportBtn">🚨 ПОЖАЛОВАТЬСЯ 🚨</button>
         </div>
         
-        <!-- Дополнительная метка о невозможности изменений -->
         <div style="background: #2f2f2f; color: #ffb347; text-align: center; padding: 8px; margin-top: 15px; border: 2px inset yellow; font-size: 0.9rem;">
             📌 ЭТО АНКЕТА ДРУГОГО УЧАСТНИКА. ВЫ НЕ МОЖЕТЕ ЕЁ ИЗМЕНИТЬ.
         </div>
     </div>
     
     <footer>
-         САЙТ ЗНАКОМСТВ © "SISKI.NET" 2012 - 2026
+         САЙТ ЗНАКОМСТВ © "POD.PIVAS.FUN" 2026 - 2026
     </footer>
 </div>
 
-<!-- НЕБОЛЬШОЙ СКРИПТ ДЛЯ ИМИТАЦИИ ДЕЙСТВИЙ (БЕЗ АНИМАЦИЙ, ПРОСТО АЛЕРТЫ) -->
 <script>
-    // Добавляем минимальную интерактивность для кнопок, но без анимаций и изменения структуры анкеты
     const msgBtn = document.getElementById('fakeActionBtn');
     const reportBtn = document.getElementById('fakeReportBtn');
     
     if (msgBtn) {
         msgBtn.addEventListener('click', function() {
-            // Просто имитируем ужасное сообщение
             alert("❤️ СООБЩЕНИЕ ОТПРАВЛЕНО ❤️\n\nВаше любовное письмо уже летит семочке");
         });
     }
@@ -402,7 +396,6 @@
         });
     }
     
-    // Также добавим сообщение при "попытке" кликнуть на фото (чисто для смеха)
     const photoDiv = document.querySelector('.photo-placeholder');
     if (photoDiv) {
         photoDiv.style.cursor = 'pointer';
@@ -411,7 +404,6 @@
         });
     }
     
-    // Небольшое "косметическое" изменение для кнопок (без анимаций, просто смена стиля при нажатии, но без transition)
     const allBtns = document.querySelectorAll('.awful-button');
     for (let btn of allBtns) {
         btn.addEventListener('mousedown', function() {
@@ -425,16 +417,8 @@
         });
     }
     
-    // Дополнительно - предупреждение для любителей покопаться в коде (консольное сообщение)
-    console.log("%c⚠️ ВЫ ЗАГЛЯНУЛИ В КОНСОЛЬ! ЭТА АНКЕТА ПРИНАДЛЕЖИТ ДРУГОМУ ЧЕЛОВЕКУ, И ОНА НАСТОЯЩАЯ (в рамках этого ужасного дизайна). НИКАКОЙ АНИМАЦИИ, ТОЛЬКО ХАРДКОРНЫЙ СТАТИЧЕСКИЙ КОШМАР.", "color: red; font-size: 16px; font-weight: bold; background: yellow; padding: 6px;");
+
 </script>
 
-<!-- 
-    Дизайн выполнен в стиле "ужасное знакомство": 
-    - Абсолютно статичный, нет ни тряски, ни мигания, ни бегущих строк 
-    - Сохранены кислотные цвета, нелепые шрифты, кривые рамки 
-    - Анкета представляет другого человека (Иннокентий Жупелов) со всеми его кринж-деталями
-    - Нет анимаций, только намеренно отвратительная стилистика
--->
 </body>
 </html>
